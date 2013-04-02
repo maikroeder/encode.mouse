@@ -37,4 +37,3 @@ def pre_render(self):
             for index, value in enumerate(unique_values):
                 dimension['colour_mapping'][value] = dimension['colours'][index]
         number = number + 1
-    import pdb; pdb.set_trace()
