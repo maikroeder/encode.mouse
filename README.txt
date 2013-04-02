@@ -9,14 +9,11 @@ Example:
 ./bin/mrbob -v -c encode/mouse/header/header.ini -O encode/mouse/header/output encode/mouse/header/input
 ./bin/mrbob -v -c encode/mouse/footer/footer.ini -O encode/mouse/footer/output encode/mouse/footer/input
 ./bin/mrbob -v -c encode/mouse/level_1.ini -O encode/mouse/overlay/output encode/mouse/overlay/input
-
 ./bin/mrbob -v -c encode/mouse/javascript/javascript.ini -O encode/mouse/javascript/output encode/mouse/javascript/input
-
-./bin/mrbob -v -c encode/mouse/primary/primary.ini -O encode/mouse/primary/output encode/mouse/primary/input
-./bin/mrbob -v -c encode/mouse/secondary/secondary.ini -O encode/mouse/secondary/output encode/mouse/secondary/input
+./bin/mrbob -v -c encode/mouse/level_1.ini -O encode/mouse/tables/output encode/mouse/tables/input
 
 ./bin/mrbob -v -c encode/mouse/subtable/subtable.ini -O encode/mouse/subtable/output encode/mouse/subtable/input
-./bin/mrbob -v -c encode/mouse/tables/tables.ini -O encode/mouse/tables/output encode/mouse/tables/input
 ./bin/mrbob -v -c encode/mouse/cell/cell.ini -O encode/mouse/cell/output encode/mouse/cell/input
-
+./bin/mrbob -v -c encode/mouse/primary/primary.ini -O encode/mouse/primary/output encode/mouse/primary/input
+./bin/mrbob -v -c encode/mouse/secondary/secondary.ini -O encode/mouse/secondary/output encode/mouse/secondary/input
 ./bin/mrbob -v -c encode/mouse/page/page.ini -O encode/mouse/page/output encode/mouse/page/input

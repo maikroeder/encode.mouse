@@ -1,4 +1,4 @@
-<table tal:define="colours python:axes[settings['colour']]['unique_values'];
+<table tal:define="colours python:dimension[settings['colour']]['unique_values'];
                    columns python:axes[settings['column']]['unique_values'];
                    right_rows python:axes[settings['right_row']]['unique_values']">
 
