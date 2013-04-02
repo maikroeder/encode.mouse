@@ -1,8 +1,8 @@
 <div id="secondaryContent" 
      class="floating-menu" 
      style="cursor: pointer;"
-     tal:define="axis python:axes[settings['colour']]"
-     tal:attributes="title python:'Click to learn more about %s' % axes[settings['colour']]['title']">
+     tal:define="axis python:dimension[colour]"
+     tal:attributes="title python:'Click to learn more about %s' % axis['title']">
 	<div class="box">
 		<div tal:attributes="id python:'about_dimension_%s' % axis['number'];
 			                 rel python:'#more_about_dimension_%s' % axis['number']"
