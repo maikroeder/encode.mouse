@@ -1,11 +1,9 @@
-<table width="100%"
-       tal:define="index_headers python:settings['index'];
-                   column_headers python:column_headers">
+<table width="100%">
 <tbody>
 
 <tr class="rowA" style="display: table-row;">
     <th style="text-align: center;"
-        tal:attributes="colspan python:len(index_headers)">
+        tal:attributes="colspan python:len(index)">
         <h3>Experiment</h3>
     </th>
     <th style="background-color: #ffffff;">
@@ -17,7 +15,7 @@
 </tr>
 
 <tr>
-    <th tal:repeat="header python:index_headers"
+    <th tal:repeat="header python:index"
         tal:content="header">
     </th>
     <th  style="background-color: #ffffff;">
@@ -38,9 +36,9 @@
         <td  style="background-color: #ffffff;">
         &nbsp;
         </td>
-        <tal:block tal:repeat="column python:column_headers">
+        <tal:block tal:repeat="column_header python:column_headers">
             <td valign="top"
-                tal:define="cell_frame python:frame[frame[settings['column']] == column]"
+                tal:define="cell_frame python:frame[frame[column] == column]"
                 tal:content="structure python:render_cell(cell_frame, index, column, template_folder)">
             </td>
         </tal:block>
