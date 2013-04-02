@@ -13,6 +13,6 @@
 </script>
 
 <script type="text/javascript">
-    {{{ overlay }}}
+    
 </script>
 </tal:block>
