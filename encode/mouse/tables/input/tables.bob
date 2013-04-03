@@ -140,14 +140,14 @@
 
                             <div class="hide"
                                  tal:attributes="id python:'div%s' % cell_index;
-                                                 style python:cell_value.any and 'background-color:#%s' % dimension[colour]['colour_mapping'][colour] or ''"
+                                                 style python:cell_value.any and 'background-color:#%s' % dimension[colour]['colour_mapping'][colour_value] or ''"
                                  tal:condition="python:cell_key in grouped.groups">
                                 <div tal:condition="python:cell_key in grouped.groups">
 
 
                                     
 
-<div tal:attributes="style python:'background-color:#%s' % dimension[colour]['colour_mapping'][colour] or '';
+<div tal:attributes="style python:'background-color:#%s' % dimension[colour]['colour_mapping'][colour_value] or '';
                      id python:'analysis-'+ cell_index">
     <div style="padding:1em;">
         <div class="box">

@@ -16,6 +16,8 @@ def debug(arg1, arg2):
 
 def level_1(self):
     self.variables = parse_variables(self.variables)
+    self.variables['measure'] = lambda x:len(set(x))
+    self.variables['render_subtable'] = lambda x: ''
     self.variables['colours'] = self.variables['colours'].split()
     self.variables['dimensions'] = self.variables['dimensions'].split()
     self.variables['left_row_left'] = self.variables['left_row_left'].split()
