@@ -10,5 +10,5 @@ def rendered_var(variables, rendered):
 
 def pre_render(self):
     self.variables = parse_variables(self.variables)
-    rendered_var(self.variables, ['overlay', 'footer'])
+    rendered_var(self.variables, ['overlay', 'footer', 'header'])
     
