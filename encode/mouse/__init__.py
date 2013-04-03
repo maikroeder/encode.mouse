@@ -14,10 +14,32 @@ def counter():
 def debug(arg1, arg2):
 	import pdb; pdb.set_trace()
 
+def render_subtable(frame):
+    return ""
+    settings = {'index': ['Lab', 
+                          'Biological Replicate', 
+                          'Sample Internal Name', 
+                          'Read Type',
+                          'Insert Length',
+                          'Treatment'],
+                'meta': ['File URL', 
+                         'dateUnrestricted'],
+                'label': 'File View',
+                'column': 'File Type'}
+    context = {'settings':settings}
+    context['grouped'] = frame.groupby(settings['index'])
+    context['settings'] = settings
+    context['render_cell'] = render_cell
+    context['template_folder'] = 'template'
+    context['dimensions'] = settings['meta']
+    context['version'] = 'version'
+    context['column_headers'] = sorted(frame[settings['column']].unique())
+    return render_template(context, 'subtable')
+
 def level_1(self):
     self.variables = parse_variables(self.variables)
     self.variables['measure'] = lambda x:len(set(x))
-    self.variables['render_subtable'] = lambda x: ''
+    self.variables['render_subtable'] = render_subtable
     self.variables['colours'] = self.variables['colours'].split()
     self.variables['dimensions'] = self.variables['dimensions'].split()
     self.variables['left_row_left'] = self.variables['left_row_left'].split()

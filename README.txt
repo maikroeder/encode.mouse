@@ -3,17 +3,53 @@
 Introduction
 ============
 
+The ENCODE RNA Dashboard (mm9) provides a summary of transcriptome data 
+production within the ENCODE project.
 
-Example:
+    http://genome.crg.es/encode_RNA_dashboard/mm9/
+ 
+Installation
+============
 
-./bin/mrbob -v -c encode/mouse/header/header.ini -O encode/mouse/header/output encode/mouse/header/input
-./bin/mrbob -v -c encode/mouse/footer/footer.ini -O encode/mouse/footer/output encode/mouse/footer/input
-./bin/mrbob -v -c encode/mouse/level_1.ini -O encode/mouse/overlay/output encode/mouse/overlay/input
-./bin/mrbob -v -c encode/mouse/level_1.ini  -O encode/mouse/javascript/output encode/mouse/javascript/input
-./bin/mrbob -v -c encode/mouse/primary/primary.ini -O encode/mouse/primary/output encode/mouse/primary/input
-./bin/mrbob -v -c encode/mouse/level_1.ini -O encode/mouse/secondary/output encode/mouse/secondary/input
+In order to install the dependencies, and put the necessary scripts into the
+bin folder, run:
 
-./bin/mrbob -v -c encode/mouse/page/page.ini -O encode/mouse/page/output encode/mouse/page/input
-./bin/mrbob -v -c encode/mouse/level_1.ini -O encode/mouse/tables/output encode/mouse/tables/input
-./bin/mrbob -v -c encode/mouse/level_2.ini -O encode/mouse/subtable/output encode/mouse/subtable/input
-./bin/mrbob -v -c encode/mouse/level_3.ini  -O encode/mouse/cell/output encode/mouse/cell/input
+    make build
+
+Template Preview
+================
+
+The templates that make up the dashboard can be rendered individually:
+
+    source dashboard.txt
+
+The templates are rendered individually, and can be previewed.
+
+Dashboard Generation
+====================
+
+The templates can be rendered together to produce the complete dashboard:
+
+    ./bin/pigeonhole commands.txt
+
+Using the Pigeonhole tool, the mr.bob commands are run once to catch their
+configuration, and then reused as many times as needed to produce the final
+dashboard.
+
+Dependencies
+============
+
+The ENCODE RNA Dashboard (mm9) is produced with the help of the following 
+Open Source Python packages:
+
+- For rendering, the zope.pagetemplate module is used:
+  https://pypi.python.org/pypi/zope.pagetemplate
+
+- Pandas provides the data structures:
+  https://pypi.python.org/pypi/pandas
+
+- mr.bob is used to render the templates individually:
+  https://pypi.python.org/pypi/mr.bob
+
+- Pigeonhole is used for assembling the dashboard from the templates:
+  https://pypi.python.org/pypi/pigeonhole
