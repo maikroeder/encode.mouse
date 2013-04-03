@@ -13,7 +13,33 @@
 		<link href="default.css" rel="stylesheet" type="text/css" />
 		<link href="standalone.css" rel="stylesheet" type="text/css" />	
 		<link href="overlay-basic.css" rel="stylesheet" type="text/css" />
-		
+		<tal:block>
+<script type="text/javascript" src="jquery.tools.min.js"></script>	
+
+<script type="text/javascript">
+function expandCollapse(id){
+	if(document.getElementById(id).className == 'hide'){
+		document.getElementById(id).className='show';
+		}
+	else{
+		document.getElementById(id).className='hide';
+		}
+	}
+</script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $("#about_dimension_0[rel]").overlay();
+    $("#about_dimension_1[rel]").overlay();
+    $("#about_dimension_2[rel]").overlay();
+    $("#about_dimension_3[rel]").overlay();
+    $("#about_dimension_4[rel]").overlay();
+    $("#about_dimension_5[rel]").overlay();
+    $("#about_dimension_6[rel]").overlay();
+});
+</script>
+</tal:block>
+
 	</head>
 	<body>
 		<div id="outer">
@@ -67,8 +93,63 @@ The file naming format of the README files is: "README_{view}.{extension}"
     
 </div>
 			<div id="content" style="clear: both;">
-		        
-		        
+		        <div id="primaryContentContainer">
+	<div id="primaryContent">
+    	<div class="box">
+			<h2>Tissue</h2>
+			<div class="boxContent">
+    			
+			</div>
+		</div>
+	</div>
+</div>
+
+
+		        <div id="secondaryContent" class="floating-menu" style="cursor: pointer;" title="Click to learn more about Technology">
+	<div class="box">
+		<div class="boxContent" id="about_dimension_6" rel="#more_about_dimension_6">
+		    <img style="float:right;" src="images/help.png" />
+			<table width="100%">
+				<tr>
+	         		<td>           
+                        <div style="background-color:#1B64B1;">
+								    <strong style="color:#fff;">RnaSeq (Hardison)</strong>
+                        </div>
+					</td>
+				</tr>
+				<tr>
+	         		<td>           
+                        <div style="background-color:#5F9450;">
+								    <strong style="color:#fff;">RnaSeq (Gingeras)</strong>
+                        </div>
+					</td>
+				</tr>
+				<tr>
+	         		<td>           
+                        <div style="background-color:#33CCCC;">
+								    <strong style="color:#fff;">RnaSeq (Ren)</strong>
+                        </div>
+					</td>
+				</tr>
+				<tr>
+	         		<td>           
+                        <div style="background-color:#E4D00A;">
+								    <strong style="color:#fff;">RnaSeq (Snyder)</strong>
+                        </div>
+					</td>
+				</tr>
+				<tr>
+	         		<td>           
+                        <div style="background-color:#E45334;">
+								    <strong style="color:#fff;">RnaSeq (Stam)</strong>
+                        </div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
+
 				<div class="clear"></div>
 			</div>
 		    
@@ -140,7 +221,7 @@ The file naming format of the README files is: "README_{view}.{extension}"
 		Please send comments/suggestions to: maik dot roder at crg dot cat and julien dot lagarde at crg dot cat.
 	</p>
 	<p>
-		Generated: Wed, 03 Apr 2013 12:32:43
+		Generated: Wed, 03 Apr 2013 15:07:54
 	</p>
 </div>
 		</div>

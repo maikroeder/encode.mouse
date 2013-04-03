@@ -8,8 +8,10 @@ Example:
 
 ./bin/mrbob -v -c encode/mouse/header/header.ini -O encode/mouse/header/output encode/mouse/header/input
 ./bin/mrbob -v -c encode/mouse/footer/footer.ini -O encode/mouse/footer/output encode/mouse/footer/input
+
 ./bin/mrbob -v -c encode/mouse/level_1.ini -O encode/mouse/overlay/output encode/mouse/overlay/input
-./bin/mrbob -v -c encode/mouse/javascript/javascript.ini -O encode/mouse/javascript/output encode/mouse/javascript/input
+./bin/mrbob -v -c encode/mouse/level_1.ini  -O encode/mouse/javascript/output encode/mouse/javascript/input
+
 ./bin/mrbob -v -c encode/mouse/level_1.ini -O encode/mouse/tables/output encode/mouse/tables/input
 ./bin/mrbob -v -c encode/mouse/level_2.ini -O encode/mouse/subtable/output encode/mouse/subtable/input
 ./bin/mrbob -v -c encode/mouse/level_3.ini  -O encode/mouse/cell/output encode/mouse/cell/input
