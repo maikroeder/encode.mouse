@@ -44,7 +44,6 @@ def level_2(self):
     self.variables = parse_variables(self.variables)
     self.variables['dimensions'] = self.variables['dimensions'].split()
     self.variables['index'] = self.variables['index'].split()
-    self.variables['meta'] = self.variables['meta'].split()
     self.variables['grouped'] = self.variables['frame'].groupby(self.variables['index'])
     self.variables['column_headers'] = sorted(self.variables['frame'][self.variables['column']].unique())
     number = 0
@@ -59,6 +58,16 @@ def level_2(self):
     self.variables['render_cell'] = lambda a, b, c, d:''
     self.variables['template_folder'] = ''
 
+def level_3(self):
+    self.variables = parse_variables(self.variables)
+    self.variables['dimensions'] = self.variables['dimensions'].split()
+    number = 0
+    for dimension_id in self.variables['dimensions']:
+        dimension = self.variables['dimension'][dimension_id.lower()]
+        unique_values = list(self.variables['frame'][dimension['id']].unique())
+        dimension['unique_values'] = unique_values
+        dimension['number'] = number
+        number = number + 1
 
 def get_frame(self):
     # Read the input file in ENCODE format
