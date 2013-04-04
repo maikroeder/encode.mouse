@@ -30,7 +30,7 @@ Dashboard Generation
 
 The templates can be rendered together to produce the complete dashboard:
 
-    ./bin/pigeonhole commands.txt
+    ./bin/pigeonhole dashboard.txt
 
 Using the Pigeonhole tool, the mr.bob commands are run once to catch their
 configuration, and then reused as many times as needed to produce the final

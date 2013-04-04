@@ -162,12 +162,7 @@
                         </th>
                     </tr>                    
                 </table>                
-            <div tal:content="structure python:render_subtable(grouped.get_group(cell_key))">
-
-
-
-
-
+            <div tal:content="structure python:slot('subtable', grouped.get_group(cell_key))">
 
 
 </div>

@@ -3,7 +3,7 @@
     	<div class="box">
 			<h2 tal:content="python:title"></h2>
 			<div class="boxContent">
-    			<tal:block content="structure python:tables" />
+    			<tal:block content="structure python:slot('tables')" />
 			</div>
 		</div>
 	</div>

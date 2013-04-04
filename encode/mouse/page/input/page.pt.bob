@@ -13,18 +13,18 @@
 		<link href="default.css" rel="stylesheet" type="text/css" />
 		<link href="standalone.css" rel="stylesheet" type="text/css" />	
 		<link href="overlay-basic.css" rel="stylesheet" type="text/css" />
-		<tal:block content="structure python:javascript" />
+		<tal:block content="structure python:slot('javascript')" />
 	</head>
 	<body>
 		<div id="outer">
-		    <tal:block content="structure python:header" />
+		    <tal:block content="structure python:slot('header')" />
 			<div id="content" style="clear: both;">
-		        <tal:block content="structure python:primary" />
-		        <tal:block content="structure python:secondary" />
+		        <tal:block content="structure python:slot('primary')" />
+		        <tal:block content="structure python:slot('secondary')" />
 				<div class="clear"></div>
 			</div>
-		    <tal:block content="structure python:overlay" />
-		    <tal:block content="structure python:footer" />
+		    <tal:block content="structure python:slot('overlay')" />
+		    <tal:block content="structure python:slot('footer')" />
 		</div>
 	</body>
 </html>
