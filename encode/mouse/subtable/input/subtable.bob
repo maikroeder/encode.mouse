@@ -25,7 +25,7 @@
         tal:content="header"></th>    
 </tr>
 
-<tal:block tal:repeat="index_frame python:[i for i in grouped]">
+<tal:block tal:repeat="index_frame python:[i for i in frame.groupby(index)]">
     <tr tal:define="index python:index_frame[0];
                     frame python:index_frame[1];"
         tal:attributes="class python:repeat['index_frame'].odd() and 'rowB' or 'rowA'">

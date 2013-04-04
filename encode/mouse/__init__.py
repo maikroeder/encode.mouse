@@ -68,7 +68,7 @@ def level_2(self):
     self.variables = parse_variables(self.variables)
     self.variables['dimensions'] = self.variables['dimensions'].split()
     self.variables['index'] = self.variables['index'].split()
-    self.variables['grouped'] = self.variables['frame'].groupby(self.variables['index'])
+    #self.variables['grouped'] = self.variables['frame'].groupby(self.variables['index'])
     self.variables['column_headers'] = sorted(self.variables['frame'][self.variables['column']].unique())
     number = 0
     for dimension_id in self.variables['dimensions']:
