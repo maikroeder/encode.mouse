@@ -6,6 +6,6 @@ def pre_render(self):
     about = u""
     for dimension in range(0, len(self.variables['dimensions'])):
         about += u'    $("#about_dimension_%s[rel]").overlay();\n' % dimension
-    overlay = u'$(document).ready(function() {\n%s});' % about
+    overlay = u'\n$(document).ready(function() {\n%s});\n' % about
     self.variables['overlay_javascript'] = overlay
     
