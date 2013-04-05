@@ -38,7 +38,7 @@
         </td>
         <tal:block tal:repeat="column_header python:column_headers">
             <td valign="top"
-                tal:content="structure python:slot('cell', frame[frame[column] == column])">
+                tal:content="structure python:slot('cell', frame[frame[column] == column_header])">
             </td>
         </tal:block>
     </tr>
