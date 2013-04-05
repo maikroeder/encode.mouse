@@ -29,7 +29,6 @@ def render_subtable(frame):
     context = {'settings':settings}
     context['grouped'] = frame.groupby(settings['index'])
     context['settings'] = settings
-    context['render_cell'] = render_cell
     context['template_folder'] = 'template'
     context['dimensions'] = settings['meta']
     context['version'] = 'version'
@@ -79,7 +78,6 @@ def level_2(self):
         number = number + 1
     self.variables['counter'] = counter()
     self.variables['debug'] = debug
-    self.variables['render_cell'] = lambda a, b, c, d:''
     self.variables['template_folder'] = ''
 
 def level_3(self):
