@@ -8,8 +8,9 @@ production within the ENCODE project.
 
     http://genome.crg.es/encode_RNA_dashboard/mm9/
 
-You can reproduce this dashboard with the encode.mouse Python package.
- 
+You can either reproduces this dashboard, or change the way it is rendered,
+by reconfiguring it.
+
 Installation
 ============
 
@@ -34,6 +35,25 @@ The following command renders the ENCODE Mouse dashboard with Pigeonhole:
 You can then open the resulting dashboard:
 
     encode/mouse/apache_export/index.html
+
+Reconfiguration
+===============
+
+You can easily reconfigure the dashboard by changing some of the dimensions.
+
+For example if you want to show the RNA Fraction at the place of the Compartment,
+you could change the following file
+
+    encode/mouse/level_1.ini
+
+and reconfigure the right_row, column and dimensions settings:
+
+    right_row: compartment
+    column: rnaextract
+    dimensions: cell strain age sex compartment rnaextract technology
+
+When you render the dashboard again, you will see the RNA Fractions used
+for the columns, and the compartment in the right row.
 
 Implementation
 ==============
