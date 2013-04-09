@@ -7,8 +7,7 @@ The ENCODE RNA Dashboard (mm9) provides a summary of transcriptome data producti
 
     http://genome.crg.es/encode_RNA_dashboard/mm9/
 
-You can either reproduces this dashboard, or change the way it is rendered,
-by reconfiguring it.
+You can either reproduce this dashboard, or change the way it is rendered, by reconfiguring it.
 
 Installation
 ============
