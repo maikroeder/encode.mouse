@@ -56,19 +56,19 @@ If you don't want to show the techn
 Implementation
 ==============
 
-Pigeonhole extends Bob, a flexible tool specially designed for rendering directory structure templates. The documentation for Bob is available here:
+Pigeonhole extends mr.bob, a flexible tool specially designed for rendering directory structure templates. The documentation for mr.bob is available here:
 
     https://github.com/iElectric/mr.bob.git
 
-The development of the individual templates that are used for rendering a complete dashboard is refreshingly simple with Bob, as you will see in the next section. Right now we will have a look at how Pigeonhole is implemented by internally calling Bob.
+The development of the individual templates that are used for rendering a complete dashboard is refreshingly simple with mr.bob, as you will see in the next section. Right now we will have a look at how Pigeonhole is implemented by internally calling mr.bob.
 
-In an initial phase, Pigeonhole reads the dashboard.txt file that contains the exact command line calls for rendering the templates with Bob, and runs all of them internally for reusing them in the next phase.
+In an initial phase, Pigeonhole reads the dashboard.txt file that contains the exact command line calls for rendering the templates with mr.bob, and runs all of them internally for reusing them in the next phase.
 
 The command line contains a number of options after "dashboard.txt" that are reproduced here:
 
     -v -c encode/mouse/page/page.ini -O encode/mouse/apache_export encode/mouse/page/input
 
-Pigeonhole internally calls Bob with these parameters, only this time the the top level template contained in 
+Pigeonhole internally calls mr.bob with these parameters, only this time the the top level template contained in 
 
     encode/mouse/page
 
@@ -94,7 +94,7 @@ You can now preview all the rendered templates:
 
     open encode/mouse/*/output/*.html
 
-If you want to experiment with the Bob parameters, you can also render them individually like this:
+If you want to experiment with the mr.bob parameters, you can also render them individually like this:
 
     ./bin/mrbob -v -c encode/mouse/header/header.ini -O encode/mouse/header/output encode/mouse/header/input
 
