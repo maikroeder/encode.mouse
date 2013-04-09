@@ -51,8 +51,6 @@ and reconfigure the right_row, column and dimensions settings:
 
 When you render the dashboard again, you will see the RNA Fractions used for the columns, and the compartment in the right row.
 
-If you don't want to show the techn
-
 Implementation
 ==============
 
