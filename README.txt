@@ -3,8 +3,7 @@
 Introduction
 ============
 
-The ENCODE RNA Dashboard (mm9) provides a summary of transcriptome data 
-production within the ENCODE project.
+The ENCODE RNA Dashboard (mm9) provides a summary of transcriptome data production within the ENCODE project.
 
     http://genome.crg.es/encode_RNA_dashboard/mm9/
 
@@ -18,8 +17,7 @@ In order to install the dependencies, run:
 
     make build
 
-This will install the right Python packages and put the necessary 
-scripts into the bin folder.
+This will install the right Python packages and put the necessary scripts into the bin folder.
 
 Dashboard Generation
 ====================
@@ -41,8 +39,7 @@ Reconfiguration
 
 You can easily reconfigure the dashboard by changing some of the dimensions.
 
-For example if you want to show the RNA Fraction at the place of the Compartment,
-you could change the following file
+For example if you want to show the RNA Fraction at the place of the Compartment, you could change the following file
 
     encode/mouse/level_1.ini
 
@@ -52,50 +49,38 @@ and reconfigure the right_row, column and dimensions settings:
     column: rnaextract
     dimensions: cell strain age sex compartment rnaextract technology
 
-When you render the dashboard again, you will see the RNA Fractions used
-for the columns, and the compartment in the right row.
+When you render the dashboard again, you will see the RNA Fractions used for the columns, and the compartment in the right row.
+
+If you don't want to show the techn
 
 Implementation
 ==============
 
-Pigeonhole extends Bob, a flexible tool specially designed for rendering 
-directory structure templates. The documentation for Bob is available here:
+Pigeonhole extends Bob, a flexible tool specially designed for rendering directory structure templates. The documentation for Bob is available here:
 
     https://github.com/iElectric/mr.bob.git
 
-The development of the individual templates that are used for rendering
-a complete dashboard is refreshingly simple with Bob, as you will see
-in the next section. Right now we will have a look at how Pigeonhole
-is implemented by internally calling Bob.
+The development of the individual templates that are used for rendering a complete dashboard is refreshingly simple with Bob, as you will see in the next section. Right now we will have a look at how Pigeonhole is implemented by internally calling Bob.
 
-In an initial phase, Pigeonhole reads the dashboard.txt file that contains the 
-exact command line calls for rendering the templates with Bob, and runs 
-all of them internally for reusing them in the next phase.
+In an initial phase, Pigeonhole reads the dashboard.txt file that contains the exact command line calls for rendering the templates with Bob, and runs all of them internally for reusing them in the next phase.
 
-The command line contains a number of options after "dashboard.txt" that are
-reproduced here:
+The command line contains a number of options after "dashboard.txt" that are reproduced here:
 
     -v -c encode/mouse/page/page.ini -O encode/mouse/apache_export encode/mouse/page/input
 
-Pigeonhole internally calls Bob with these parameters, only this time the 
-the top level template contained in 
+Pigeonhole internally calls Bob with these parameters, only this time the the top level template contained in 
 
     encode/mouse/page
 
-renders lower level templates recursively through callback slots embedded 
-in the templates, that were ignored in the initial phase. Here is an example
-of a simple slot that embeds the header template inside the page template:
+renders lower level templates recursively through callback slots embedded in the templates, that were ignored in the initial phase. Here is an example of a simple slot that embeds the header template inside the page template:
 
     <tal:block content="structure python:slot('header')" />
 
-Some callbacks pass on a reduced data set of the ENCODE Mouse dashboard, for
-example the tables template that repeatedly calls the subtable template 
-with a different group of data:
+Some callbacks pass on a reduced data set of the ENCODE Mouse dashboard, for example the tables template that repeatedly calls the subtable template with a different group of data:
 
     <div tal:content="structure python:slot('subtable', grouped.get_group(cell_key))">
 
-The data set is reduced until the lowest level has been reached, and templates
-are inserted recursively into upper level templates.
+The data set is reduced until the lowest level has been reached, and templates are inserted recursively into upper level templates.
 
 
 Template Preview
@@ -117,21 +102,16 @@ In this example, the result can be previewed in a browser by opening
 
     open encode/mouse/header/output/header.html
 
-The templates here use the whole data from the ENCODE Mouse dashboard, which
-makes them bulky, but it does have two great advantages:
+The templates here use the whole data from the ENCODE Mouse dashboard, which makes them bulky, but it does have two great advantages:
 
-1. It is rather practical to get a good overview of how the rendering will
-look for all the different types of data. 
+1. It is rather practical to get a good overview of how the rendering will look for all the different types of data. 
 
-2. Rendering all data will also make sure that the template will 
-not break later when rendering the whole dashboard, while reporting 
-no problems with a limited data set.
+2. Rendering all data will also make sure that the template will not break later when rendering the whole dashboard, while reporting no problems with a limited data set.
 
 Dependencies
 ============
 
-The ENCODE RNA Dashboard (mm9) is produced with the help of the following 
-Open Source Python packages:
+The ENCODE RNA Dashboard (mm9) is produced with the help of the following Open Source Python packages:
 
 - For rendering, the zope.pagetemplate module is used:
   https://pypi.python.org/pypi/zope.pagetemplate
