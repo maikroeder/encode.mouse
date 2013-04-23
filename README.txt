@@ -23,7 +23,7 @@ Dashboard Generation
 
 The ENCODE Mouse dashboard data is read from the following location:
 
-    encode/mouse/apache_export/mm9_RNA_dashboard_files.txt
+    output/mm9_RNA_dashboard_files.txt
 
 The following command renders the ENCODE Mouse dashboard with Pigeonhole:
 
