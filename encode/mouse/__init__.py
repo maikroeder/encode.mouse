@@ -71,7 +71,7 @@ def level_3(self):
 
 def get_frame(self):
     # Read the input file in ENCODE format
-    file_path = 'encode/mouse/apache_export/mm9_RNA_dashboard_files.txt'
+    file_path = 'output/mm9_RNA_dashboard_files.txt'
     frame = pd.DataFrame(parse(file_path), dtype=object)
     frame['dateunrestricted'] = frame['dateUnrestricted']
     frame['biologicalreplicate'] = frame['replicate']
